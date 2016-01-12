@@ -1,0 +1,1 @@
+docker build --rm=true -t ninel/phoenix_hbase:4.5.1 .

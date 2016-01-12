@@ -1,0 +1,73 @@
+<configuration>
+    <property>
+        <name>hbase.cluster.distributed</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hbase.master.port</name>
+        <value>60000</value>
+    </property>
+    <property>
+        <name>hbase.master.info.port</name>
+        <value>60010</value>
+    </property>
+    <property>
+        <name>hbase.regionserver.port</name>
+        <value>60020</value>
+    </property>
+    <property>
+        <name>hbase.regionserver.info.port</name>
+        <value>60030</value>
+    </property>
+
+    <property>
+        <name>hbase.regionserver.ipc.address</name>
+        <value>0.0.0.0</value>
+    </property>
+
+
+    <property>
+        <name>hbase.rootdir</name>
+        <value>file:///data/hbase</value>
+    </property>
+    <property>
+        <name>hbase.zookeeper.property.dataDir</name>
+        <value>/data/hbase/zookeeper</value>
+    </property>
+
+    <property>
+        <name>hbase.zookeeper.property.autopurge.snapRetainCount</name>
+        <value>3</value>
+    </property>
+    <property>
+        <name>hbase.zookeeper.property.autopurge.purgeInterval</name>
+        <value>1</value>
+    </property>
+
+    <!-- addition for region server outage: http://gbif.blogspot.kr/2012/07/optimizing-writes-in-hbase.html -->
+    <!-- default is 256MB 268435456, this is 1.5GB -->
+    <property>
+        <name>hbase.hregion.max.filesize</name>
+        <value>1610612736</value>
+    </property>
+
+    <!-- default is 2 -->
+    <property>
+        <name>hbase.hregion.memstore.block.multiplier</name>
+        <value>4</value>
+    </property>
+
+    <!-- default is 64MB 67108864 -->
+    <property>
+        <name>hbase.hregion.memstore.flush.size</name>
+        <value>134217728</value>
+    </property>
+
+    <!-- default is 7, should be at least 2x compactionThreshold -->
+    <property>
+        <name>hbase.hstore.blockingStoreFiles</name>
+        <value>200</value>
+    </property>
+
+
+</configuration>

@@ -1,0 +1,1 @@
+docker build --rm=true -t ninel/jwebsocket:1.0.0 .

@@ -1,0 +1,1 @@
+docker build --rm=true -t ninel/base-jdk-defaults .

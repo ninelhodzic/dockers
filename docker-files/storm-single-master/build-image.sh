@@ -1,0 +1,1 @@
+docker build  --rm=true -t ninel/storm:0.9.2-incubating .

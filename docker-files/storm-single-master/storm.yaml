@@ -1,0 +1,29 @@
+storm.zookeeper.servers:
+ - docker-hbase
+# - %zookeeper%
+
+#nimbus.host: %nimbus%
+nimbus.host: storm
+storm.local.hostname: storm
+
+ui.port: 7777
+
+supervisor.slots.ports:
+ - 6700
+ - 6701
+ - 6702
+ - 6703
+
+
+worker.childopts: "-Xmx6g -Dfile.encoding=UTF-8 -XX:MaxTenuringThreshold=1 -XX:SurvivorRatio=6
+    -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled
+    -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly
+    -server -XX:+AggressiveOpts -XX:+UseCompressedOops -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true"
+    
+nimbus.childopts: "-Xmx2048m"
+supervisor.childopts: "-Xmx2024m"
+
+topology.kryo.register:
+ - com.olyfe.helpers.enums.OLSocialIdentifierEnum
+
+storm.local.dir: "storm-transaction"
